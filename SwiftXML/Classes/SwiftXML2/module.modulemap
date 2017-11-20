@@ -1,0 +1,5 @@
+module SwiftXML2 [system] {
+  link "xml2"
+  umbrella header "swiftxml2.h"
+  export *
+}

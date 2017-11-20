@@ -22,21 +22,18 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/Igor Kotkovets/SwiftXML'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Igor Kotkovets' => 'igorkotkovets@users.noreply.github.com' }
   s.source           = { :git => 'https://github.com/Igor Kotkovets/SwiftXML.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'SwiftXML/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'SwiftXML' => ['SwiftXML/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.osx.deployment_target = '10.9'
+  s.tvos.deployment_target = '9.0'
+  s.watchos.deployment_target = '2.0'
+  s.libraries     = 'xml2'
+  s.requires_arc = true
+  s.source_files = 'SwiftXML/Classes/**/*.swift'
+  s.preserve_paths = 'SwiftXML/Classes/SwiftXML2/module.modulemap'
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2 $(PODS_ROOT)/SwiftXML/Classes/SwiftXML2',
+                 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/../../SwiftXML/Classes/SwiftXML2' }
 end

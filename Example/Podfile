@@ -1,11 +1,12 @@
 use_frameworks!
+platform :ios, '9.0'
 
 target 'SwiftXML_Example' do
   pod 'SwiftXML', :path => '../'
 
-  target 'SwiftXML_Tests' do
-    inherit! :search_paths
+end
 
+target 'SwiftXML_Tests' do
+  pod 'SwiftXML', :path => '../'
     
-  end
 end
